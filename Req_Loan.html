@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>Application page</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+	
+
+	<div class="hero">
+		<nav>
+			<h2 class="logo">مؤسسة<span>التمويل</span></h2>
+			<ul>
+				
+				<li><a href="aboutus.html">معلومات عنا</a></li>
+				<li><a href="products.html">منتجاتنا وخدماتنا</a></li>
+				<li><a href="Req_Loan.html">تقديم طلب قرض</a></li>
+				
+			</ul>
+			<a href="home.html" class="btn">الصفحة الرئسية</a>
+		</nav>
+        
+
+          
+
+          <div class="form-body">
+            <div class="row">
+                <div class="form-holder">
+                    <div class="form-content">
+                        <div class="form-items">
+                            <h3>Application page</h3>
+                            <p>Fill in the data below.</p>
+                            <form class="requires-validation" action="result.html" >
+    
+                                <div class="col-md-12">
+                                   <input class="form-control" type="text" name="name" id="fullName" placeholder="Full Name" required>
+                                   <div class="valid-feedback d-none" id="validName">Username field is valid!</div>
+                                   <div class="invalid-feedback d-none" id="invalidName">Username field cannot be blank!</div>
+                                </div>
+
+                                <div class="col-md-12">
+                                  <input class="form-control" type="number" name="id" id="personalId" placeholder="the ID number" required>
+                                  <div class="valid-feedback d-none" id="validId">the IDnumber field is valid!</div>
+                                  <div class="invalid-feedback d-none" id="invalidId">the IDnumber field cannot be blank!</div>
+                               </div>
+
+                               <div class="col-md-12">
+                                <input class="form-control" type="date" name="date" id="date" placeholder="date of Birth" required>
+                                <div class="valid-feedback d-none" id="validDate">the date of Birth field is valid!</div>
+                                <div class="invalid-feedback d-none" id="invalidDate">the date of Birth field cannot be blank!</div>
+                             </div>
+
+                             <div class="col-md-12">
+                              <input class="form-control" type="number" name="number" id="mobile" placeholder="mobile number" required>
+                               <div class="valid-feedback d-none" id="mobileValid">mobile number is valid!</div>
+                               <div class="invalid-feedback d-none" id="mobileInvalid">mobile number is invalid!</div>
+                          </div>
+    
+                                <div class="col-md-12">
+                                    <input class="form-control" type="email" name="email" id="email" placeholder="E-mail Address" required>
+                                     <div class="valid-feedback d-none" id="validEmail"> the Email field is valid!</div>
+                                     <div class="invalid-feedback d-none" id="invalidEmail">the Email field cannot be blank!</div>
+                                </div>
+
+                                <div class="col-md-12">
+                                  <input class="form-control" type="number" max="10000000" min="1000000" name="amount" id="loanAmount" placeholder="loan amount" required>
+                                   <div class="valid-feedback d-none" id="loanValid">the loan amount is valid!</div>
+                                   <div class="invalid-feedback d-none" id="loanInvalid">the loan amount is invalid!</div>
+                              </div>
+    
+                               <div class="col-md-12">
+                                    <select class="form-select mt-3" name="loanType" id="loanType" required>
+                                          <option value="">loan type</option>
+                                          <option value="حساب التوفير">حساب التوفير</option>
+                                          <option value="الحساب التجاري">الحساب التجاري</option>
+                                          <option value="القرض التعليمي">القرض التعليمي</option>
+                                          <option value="القرض السكني">القرض السكني</option>
+                                          <option value="القرض الزراعي">القرض الزراعي</option>
+                                          <option value="القرض التجاري">القرض التجاري</option>
+                                          <option value="القرض النقل">القرض النقل</option>
+                                          <option value="القرض الورشات">القرض الورشات</option>
+                                          
+                                   </select>
+                                    <div class="valid-feedback d-none" id="validLoanType">You selected a loan type!</div>
+                                    <div class="invalid-feedback d-none" id="invalidLoanType">Please select a loan type!</div>
+                               </div>
+                               
+                               <div class="col-md-12">
+                                <select class="form-select mt-3" name="loanYear" id="loanYears" required>
+                                      <option selected disabled value="">years of the loan</option>
+                                      <option value="3">3</option>
+                                      <option value="5">5</option>
+                                      <option value="10">10</option>
+                                      <option value="20">20</option>
+                                      
+                                </select>
+                                <div class="valid-feedback d-none" id="validLoanYears">You selected a years of the loan!</div>
+                                <div class="invalid-feedback d-none" id="invalidLoanYears">Please select a years of the loan!</div>
+                           </div>
+
+                           <div class="col-md-12">
+                            <select class="form-select mt-3" name="paymentMethod" id="paymentMethod" required>
+                                  <option value="">Payment method</option>
+                                  <option value="شهرية">شهرية</option>
+                                  <option value="ربعية">ربعية</option>
+                                  <option value="سنوية">سنوية</option>
+                                  
+                           </select>
+                            <div class="valid-feedback d-none" id="validpaymentMethod">You selected a Payment method!</div>
+                            <div class="invalid-feedback d-none" id="invalidpaymentMethod">Please select a Payment method!</div>
+                       </div>
+                       <br>
+                       <label>Enter Captcha</label>
+                       <div class="form-row">
+                         <div class="form-group col-md-6">
+                           <input type="text" class="form-control" id="capt" readonly>
+                         </div>
+                         <div class="form-group col-md-6">
+                           <input type="text" class="form-control" id="checkCap" placeholder="Enter Captcha">
+                         </div>
+                         <div class="valid-feedback d-none" id="validCaptcha">Captcha codes match</div>
+                          <div class="invalid-feedback d-none" id="invalidCaptch">Captcha codes does not match!</div>
+                       <div class="Captcha"> 
+                        
+                        <h6>Captcha not visible 
+                        </h6>
+                        <img src="img/refresh.jpg" width="40px" onclick="cap()">
+                      </div>
+                       </div>
+                       
+    
+    
+                               
+                      
+    
+                                <div class="form-button mt-3">
+                                    <button id="submit" type="submit" disabled="disabled">Register</button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+	</div>
+
+
+	<script type="text/javascript">
+    function cap(){
+      var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'
+                   ,'W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f','g','h','i',
+                   'j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', '!','@','#','$','%','^','&','*','+'];
+                   var a = alpha[Math.floor(Math.random()*71)];
+                   var b = alpha[Math.floor(Math.random()*71)];
+                   var c = alpha[Math.floor(Math.random()*71)];
+                   var d = alpha[Math.floor(Math.random()*71)];
+                   var e = alpha[Math.floor(Math.random()*71)];
+                   var f = alpha[Math.floor(Math.random()*71)];
+  
+                   var final = a+b+c+d+e+f;
+                   document.getElementById("capt").value=final;
+                   document.getElementById("checkCap").value = '';
+
+                 }
+                 function validcap(){
+                  var stg1 = document.getElementById('capt').value;
+                  var stg2 = document.getElementById('textinput').value;
+                  if(stg1==stg2){
+                    alert("Form is validated Succesfully");
+                    return true;
+                  }else{
+                    alert("Please enter a valid captcha");
+                    return false;
+                  }
+                 }
+
+                 cap();
+  </script>
+
+<script src="js/myFunctions.js"></script>
+
+
+</body>
+</html>

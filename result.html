@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Result</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+	
+
+	<div class="hero">
+		<nav>
+			<h2 class="logo">مؤسسة<span>التمويل</span></h2>
+			<ul>
+				
+				<li><a href="aboutus.html">معلومات عنا</a></li>
+				<li><a href="products.html">منتجاتنا وخدماتنا</a></li>
+				<li><a href="Req_Loan.html">تقديم طلب قرض</a></li>
+				
+			</ul>
+			<a href="home.html" class="btn">الصفحة الرئسية</a>
+		</nav>
+		<h2> معلومات القرض</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>قيمة القرض المطلوب</th>
+            <th>نوع القرض </th>
+            <th>الفائدة السنوية</th>
+            <th>عدد السنوات</th>
+            <th>قيمة الدفعة\طريقة التسديد</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="loanAmount"></td>
+            <td id="loanType"> </td>
+            <td id="loanFaeda"></td>
+            <td id="loanYear">  </td>
+            <td id="paymentMethod"></td>
+        </tr>
+        
+        
+        <tbody>
+    </table>
+</div>
+<h2>  معلومات مقدم الطلب</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>الاسم الكامل</th>
+            <th> الرقم الوطني </th>
+            <th> تاريخ الولادة</th>
+            <th> رقم الموبايل</th>
+            <th> الإيميل </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="name"></td>
+            <td id="personalId"> </td>
+            <td id="date"></td>
+            <td id="mobile">  </td>
+            <td id="email"> </td>
+        </tr>
+        
+        
+        <tbody>
+    </table>
+</div>
+
+		
+	</div>
+
+
+    <script src="js/myFunctions.js"></script>
+
+    <script>
+
+
+        var loanFaeda = {'حساب التوفير': '5', 'حساب الجاري' : '5', 'القرض التعليمي': '10', 'القرض السكني': '11', 'القرض السكني': '18', 'القرض الزراعي': '14', 'قرض النقل' : '12', 'قرض الورشات' : '14'};
+
+        var loanFirstPay = {'شهرية' : '12', 'ربعية' : '4', 'سنوية' : '1'};
+
+
+        var url_string = window.location;
+        var url = new URL(url_string);
+
+        var name = url.searchParams.get('name');
+        var personalId = url.searchParams.get('id');
+        var date = url.searchParams.get('date');
+        var mobile = url.searchParams.get('number');
+        var email = url.searchParams.get('email');
+        var loanAmount = url.searchParams.get('amount');
+        var loanType = url.searchParams.get('loanType');
+        var loanYear = url.searchParams.get('loanYear');
+        var paymentMethod = url.searchParams.get('paymentMethod');
+
+
+        document.getElementById('name').innerHTML = name;
+
+        document.getElementById('personalId').innerHTML = personalId;
+        
+        document.getElementById('date').innerHTML = date;
+        
+        document.getElementById('mobile').innerHTML = mobile;
+        
+        document.getElementById('email').innerHTML = email;
+        
+        document.getElementById('loanAmount').innerHTML = loanAmount;
+        
+        document.getElementById('loanType').innerHTML = loanType;
+        
+        document.getElementById('loanYear').innerHTML = loanYear;
+        
+        document.getElementById('loanFaeda').innerHTML = loanFaeda[loanType] + '%';
+
+        var percent = (loanAmount/loanYear + loanAmount/loanYear*loanFaeda[loanType]/100)/loanFirstPay[paymentMethod];
+
+
+        document.getElementById('paymentMethod').innerHTML = Math.round(percent) + ' ' + paymentMethod;
+
+
+        </script>
+
+</body>
+</html>
